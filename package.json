@@ -1,0 +1,90 @@
+{
+  "name": "what-happened",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon",
+    "build": "tsc -p .",
+    "test": "jest --coverage",
+    "test:watch": "npm run test -- --watchAll",
+    "commit": "git cz",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@re.github.com:realeyes-media/what-happened.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.5.5",
+    "axios": "^0.21.1",
+    "dotenv": "^8.1.0",
+    "fastify": "^3.1.1",
+    "fastify-autoload": "^3.7.0",
+    "fastify-cors": "^4.1.0",
+    "fastify-multipart": "^4.0.3",
+    "fastify-static": "^4.0.1",
+    "fastify-swagger": "^4.5.1",
+    "mongoose": "5.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2",
+    "@types/busboy": "^0.2.3",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^4.2.4",
+    "eslint-config-wesbos": "^2.0.0-beta.4",
+    "@types/adm-zip": "^0.4.34",
+    "@types/babel__core": "^7.1.12",
+    "@types/cors": "^2.8.6",
+    "@types/jest": "^24.0.18",
+    "@types/mongoose": "^5.10.3",
+    "@types/node": "^14.14.41",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.5",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "git-cz": "^4.7.0",
+    "jest": "^24.9.0",
+    "prettier": "^2.2.1"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "eslint-config-wesbos/typescript.js",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "rules": {
+      "@typescript-eslint/no-floating-promises": "off",
+      "no-redeclare": "off",
+      "@typescript-eslint/no-redeclare": [
+        "warn",
+        {
+          "ignoreDeclarationMerge": true
+        }
+      ],
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": [
+        "error"
+      ]
+    }
+  }
+}
