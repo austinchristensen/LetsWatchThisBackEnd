@@ -1,8 +1,11 @@
-import mongoose from 'mongoose';
+import { Schema, model, connect } from 'mongoose';
 
-const { Schema } = mongoose;
+interface Session {
+  events: [];
+  timestamps: { createdAt: Date; updatedAt: Date };
+}
 
-const schema = new Schema(
+const schema = new Schema<Session>(
   {
     events: { type: [], required: true, default: [] },
   },
@@ -11,27 +14,27 @@ const schema = new Schema(
   }
 );
 
-const model = mongoose.model('Session', schema);
+const sessionModel = model<Session>('Session', schema);
 
-export default model;
+export default sessionModel;
 
 export async function getAllProducts() {
-  const test = await model.find({}).exec();
-  return model.find({});
+  const test = await sessionModel.find({}).exec();
+  return sessionModel.find({});
 }
 
 export function getOneProduct(id: string) {
-  return model.findOne({ _id: id });
+  return sessionModel.findOne({ _id: id });
 }
 
 export function createProduct(data: { _id?: unknown; }) {
-  return model.create(data);
+  return sessionModel.create(data);
 }
 
 export function updateProduct(id: string, data: { _id?: unknown; }) {
-  return model.updateOne({ _id: id }, data);
+  return sessionModel.updateOne({ _id: id }, data);
 }
 
 export function deleteProduct(id: string) {
-  return model.deleteOne({ _id: id });
+  return sessionModel.deleteOne({ _id: id });
 }
