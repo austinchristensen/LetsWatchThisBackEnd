@@ -27,9 +27,10 @@
     "fastify-autoload": "^3.7.0",
     "fastify-cors": "^4.1.0",
     "fastify-multipart": "^4.0.3",
+    "fastify-postgres": "^3.5.0",
     "fastify-static": "^4.0.1",
     "fastify-swagger": "^4.5.1",
-    "mongoose": "5.10.0"
+    "pg": "^8.6.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.2",
@@ -42,7 +43,7 @@
     "@types/babel__core": "^7.1.12",
     "@types/cors": "^2.8.6",
     "@types/jest": "^24.0.18",
-    "@types/mongoose": "^5.10.3",
+    "@types/pg": "^8.6.0",
     "@types/node": "^14.14.41",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
@@ -84,7 +85,8 @@
       "no-shadow": "off",
       "@typescript-eslint/no-shadow": [
         "error"
-      ]
+      ],
+      "quotes": ["error", "single"]
     }
   }
 }
