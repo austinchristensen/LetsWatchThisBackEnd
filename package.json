@@ -33,18 +33,14 @@
     "pg": "^8.6.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.2",
-    "@types/busboy": "^0.2.3",
-    "ts-jest": "^24.1.0",
-    "ts-node": "^8.4.1",
-    "typescript": "^4.2.4",
-    "eslint-config-wesbos": "^2.0.0-beta.4",
+    "@databases/pg-test": "^3.0.1",
     "@types/adm-zip": "^0.4.34",
     "@types/babel__core": "^7.1.12",
+    "@types/busboy": "^0.2.3",
     "@types/cors": "^2.8.6",
     "@types/jest": "^24.0.18",
-    "@types/pg": "^8.6.0",
     "@types/node": "^14.14.41",
+    "@types/pg": "^8.6.0",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "babel-eslint": "^10.1.0",
@@ -52,6 +48,7 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^7.2.0",
+    "eslint-config-wesbos": "^2.0.0-beta.4",
     "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.3.5",
@@ -61,7 +58,11 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "git-cz": "^4.7.0",
     "jest": "^24.9.0",
-    "prettier": "^2.2.1"
+    "nodemon": "^1.19.2",
+    "prettier": "^2.2.1",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^4.2.4"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
@@ -86,7 +87,23 @@
       "@typescript-eslint/no-shadow": [
         "error"
       ],
-      "quotes": ["error", "single"]
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "**/*.test.ts",
+            "**/*.test.tsx",
+            "**/*.spec.ts",
+            "**/*.spec.tsx",
+            "**/*.stories.tsx",
+            "**/setupTests.ts"
+          ]
+        }
+      ]
     }
   }
 }

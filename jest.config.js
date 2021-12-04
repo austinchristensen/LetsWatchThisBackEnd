@@ -10,4 +10,8 @@ module.exports = {
   },
   testMatch: ['**/*.spec.ts'],
   testEnvironment: 'node',
+  // globalSetup:
+  //   '/Users/austinchristensen/Dev/SelfLearningIos/LetsWatchThisBackEnd/node_modules/@databases/pg-test/jest/globalSetup.js',
+  // globalTeardown:
+  //   '/Users/austinchristensen/Dev/SelfLearningIos/LetsWatchThisBackEnd/node_modules/@databases/pg-test/jest/globalTeardown.js',
 };

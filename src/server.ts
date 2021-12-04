@@ -9,7 +9,8 @@ import booksHandler from './routes/books/routes';
 import showsHandler from './routes/shows/routes';
 import usersHandler from './routes/users/routes';
 
-function createServer(): FastifyInstance {
+function createServer(connectionString: string): FastifyInstance {
+  console.log(connectionString);
   const server = fastify();
   server.register(fastifyCors);
   server.register(fastifyPostgres, {
